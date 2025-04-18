@@ -1,72 +1,92 @@
 <!DOCTYPE html> 
 <html> 
-<!-- The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only.  Any user of this code does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.
- 
-THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.
- 
- 
-Authors in chronological order of contribution:
-Tim Riedel
-Author 2
- 
-Further Information:
-http://diystream.cns.utexas.edu/
+<!-- 
+The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at Austin.  
 
-Research Educator:
-Timothy Riedel
-triedel@utexas.edu
- 
-Brief Description of Goal of Code:
-blah, blah, blah,
- 
-Known Issues:
-blah, blah, blah, blah
-Ignore this error message if you see it using the javaScript console: Error with Permissions-Policy header: Origin trial controlled feature not enabled: 'interest-cohort'.
+DISCLAIMER: This code is intended for demonstration and educational purposes only. It should NOT be used to diagnose any medical conditions. 
 
-References:
-https://www.w3schools.com/w3css/default.asp
-https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-file
+Developers and researchers: Tim Riedel, Ukpono Udobong, and collaborators
 -->
-	
+
 <head> 
-	<title>Hello World</title>  
-]	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<link rel="stylesheet" href="w3.css">
-	<link rel="stylesheet" href="w3-colors-flat.css">
+    <title>Migraine or Headache?</title>  
+    <!-- Make the site mobile-friendly -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Enable full-screen mode on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- Link to W3.CSS stylesheets for styling -->
+    <link rel="stylesheet" href="w3.css">
+    <link rel="stylesheet" href="w3-colors-flat.css">
 </head> 
 
 <script>
+    // Initialize counters for symptoms indicating either migraines or headaches
+    var migraine_count = 0;
+    var headache_count = 0;
 
-	//YOUR JAVASCRIPT GOES HERE
+    // Function to increment the migraine symptom counter
+    function migraineAdd(){
+        migraine_count = migraine_count + 1;
+    }
 
-</script>	
+    // Function to increment the headache symptom counter
+    function headacheAdd(){
+        headache_count = headache_count + 1;
+    }
 
+    // Function to compare counters and display a diagnosis message
+    function showResult() {
+        var resultText = document.getElementById("resultMessage"); // Get the result display element
+        if (migraine_count > headache_count) {
+            resultText.innerHTML = "Your symptoms are more consistent with a migraine.";
+        } else if (headache_count > migraine_count) {
+            resultText.innerHTML = "Your symptoms are more consistent with a standard headache.";
+        } else {
+            resultText.innerHTML = "Your symptoms could indicate either a migraine or a headache.";
+        }
+    }
+</script>
 
-<!-- THIS STYLE CODE HELPS MAKE YOUR APP LOOK GOOD. PROBABLY DONT MESS WITH IT -->
 <style>	
-.body {
-     margin: 0em;
-}
-
+/* Style to hide pages unless they are targeted in the URL */
 .page {
     width: 100vw;
     height: 100vh;
     position: fixed;
     top: 0;
-    left: -100vw;
+    left: -100vw; /* Push off-screen by default */
     overflow-y: auto;
     z-index: 0;
     background-color: hsl(0,0%,100%);
 }
 
-  .page:target {
+/* Bring a page into view when its ID is targeted via the anchor link */
+.page:target {
     left: 0vw;
     z-index: 1;
 }
 </style>
 
-<body><!-- Question 1 -->
+<body>
+
+<!-- Header -->
+<div id="header" class="w3-container w3-flat-carrot">
+    <h1>Migraine or Headache?</h1>
+</div>
+
+<!-- Intro content and disclaimer -->
+<div id="content" class="w3-container">
+    <p>Are you experiencing head pain but unsure if it’s a migraine or just a regular headache? Answer a few short questions to find out!</p>
+    
+    <!-- Button to start the quiz -->
+    <a href="#one" class="w3-btn w3-grey w3-round"> Get Started </a>
+    
+    <!-- Legal and ethical disclaimer -->
+    <p>The following code was developed by students and/or researchers in the DIY Diagnostics Stream at UT Austin. This tool is for educational use only.</p>
+    <p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
+</div>
+
+<!-- Question 1 -->
 <div class="page" id="one">
     <div class="w3-container w3-flat-carrot">
         <h1>Question 1</h1>
@@ -162,6 +182,5 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
     <p>DIY!</p>
 </footer>
 
-	
 </body>
 </html>
