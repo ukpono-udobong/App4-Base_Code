@@ -66,10 +66,102 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 }
 </style>
 
-<body>
-	
-	<!-- HERE IS WHERE ALL OF YOUR HTML PAGES GO -->
-	REPLACE THIS TEXT
+<body><!-- Question 1 -->
+<div class="page" id="one">
+    <div class="w3-container w3-flat-carrot">
+        <h1>Question 1</h1>
+    </div>
+    <div class="w3-container">
+        <p>Are you sensitive to light or sound?</p>
+        <!-- Sensitivity to light/sound is strongly linked to migraines -->
+        <a href="#two" class="w3-btn w3-green" onclick="migraineAdd()">Yes</a>
+        <a href="#two" class="w3-btn w3-red" onclick="headacheAdd()">No</a>
+    </div>
+</div>
+
+<!-- Question 2 -->
+<div class="page" id="two">
+    <div class="w3-container w3-flat-carrot">
+        <h1>Question 2</h1>
+    </div>
+    <div class="w3-container">
+        <p>Do you feel nausea or have you vomited?</p>
+        <!-- Nausea is a classic migraine symptom -->
+        <a href="#three" class="w3-btn w3-green" onclick="migraineAdd()">Yes</a>
+        <a href="#three" class="w3-btn w3-red">No</a>
+    </div>
+</div>
+
+<!-- Question 3 -->
+<div class="page" id="three">
+    <div class="w3-container w3-flat-carrot">
+        <h1>Question 3</h1>
+    </div>
+    <div class="w3-container">
+        <p>Is your pain throbbing or pulsing?</p>
+        <!-- Throbbing pain is common in migraines -->
+        <a href="#four" class="w3-btn w3-green" onclick="migraineAdd()">Yes</a>
+        <a href="#four" class="w3-btn w3-red" onclick="headacheAdd()">No</a>
+    </div>
+</div>
+
+<!-- Question 4 -->
+<div class="page" id="four">
+    <div class="w3-container w3-flat-carrot">
+        <h1>Question 4</h1>
+    </div>
+    <div class="w3-container">
+        <p>Is the pain mostly on one side of your head?</p>
+        <!-- One-sided head pain is a hallmark of migraines -->
+        <a href="#five" class="w3-btn w3-green" onclick="migraineAdd()">Yes</a>
+        <a href="#five" class="w3-btn w3-red">No</a>
+    </div>
+</div>
+
+<!-- Question 5 -->
+<div class="page" id="five">
+    <div class="w3-container w3-flat-carrot">
+        <h1>Question 5</h1>
+    </div>
+    <div class="w3-container">
+        <p>Have you had neck stiffness or pressure?</p>
+        <!-- Tension headaches may include neck stiffness -->
+        <a href="#six" class="w3-btn w3-green" onclick="headacheAdd()">Yes</a>
+        <a href="#six" class="w3-btn w3-red">No</a>
+    </div>
+</div>
+
+<!-- Question 6 -->
+<div class="page" id="six">
+    <div class="w3-container w3-flat-carrot">
+        <h1>Question 6</h1>
+    </div>
+    <div class="w3-container">
+        <p>Have you experienced visual disturbances (like seeing flashing lights or aura)?</p>
+        <!-- Visual aura is often associated with migraines -->
+        <a href="#resultPage" class="w3-btn w3-green" onclick="migraineAdd()">Yes</a>
+        <a href="#resultPage" class="w3-btn w3-red">No</a>
+    </div>
+</div>
+
+<!-- Results Page -->
+<div class="page" id="resultPage">
+    <div class="w3-container w3-flat-carrot">
+        <h1>Results</h1>
+    </div>
+    <div class="w3-container">
+        <!-- Result message placeholder -->
+        <p id="resultMessage">this text should go away</p>
+        <!-- Button to show final diagnosis based on symptom counts -->
+        <a class="w3-btn w3-grey" onclick="showResult()">See Result</a>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="w3-bottom w3-container w3-flat-carrot">
+    <p>DIY!</p>
+</footer>
+
 	
 </body>
 </html>
